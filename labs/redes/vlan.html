@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>VLANs y Segmentación | Laboratorio de Redes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+
+<body>
+
+    <header class="hero">
+        <h1>🔀 VLANs y Segmentación de Red</h1>
+        <p class="subtitle">Laboratorio de redes con switches Cisco</p>
+
+        <p class="hero-links">
+            <a href="../../redes.html">← Volver a laboratorios</a>
+        </p>
+    </header>
+
+    <main>
+
+        <section class="card">
+            <h2>📌 Objetivo</h2>
+            <p>
+                Implementar la segmentación lógica de una red mediante VLANs,
+                configurando puertos de acceso, VLAN de voz, enlaces troncales
+                y interfaces virtuales de administración en switches Cisco.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>🧠 Importancia de las VLANs</h2>
+            <p>
+                Las VLANs permiten dividir una red física en múltiples redes lógicas,
+                reduciendo el dominio de broadcast, aumentando la seguridad
+                y mejorando la administración del tráfico.
+            </p>
+            <p>
+                En entornos empresariales son esenciales para separar departamentos,
+                tráfico de voz y redes de administración.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>🧩 Topología</h2>
+            <img src="assets/img/redes/vlan/vlan_topologia.png" alt="Topología de VLANs"
+                style="max-width:100%; border-radius:8px;">
+        </section>
+
+        <section class="card">
+            <h2>🗂️ Tabla de VLANs</h2>
+            <img src="/oscar-olveiraa.github.io/assets/img/redes/vlan/tabla_vlan.png" alt="Tabla de VLANs"
+                style="max-width:100%; border-radius:8px;">
+            <p>
+                Las VLANs se crean siguiendo la nomenclatura definida
+                en la tabla para mantener consistencia en la red.
+            </p>
+        </section>
+
+
+        <section class="card">
+            <h2>⚙️ Configuración de VLANs</h2>
+            <pre><code>
+enable
+configure terminal
+
+vlan 10
+ name Admin
+vlan 20
+ name Accounts
+vlan 30
+ name HR
+vlan 40
+ name Voice
+vlan 99
+ name Management
+vlan 100
+ name Native
+
+end
+    </code></pre>
+        </section>
+
+        <section class="card">
+            <h2>📋 Tabla de direccionamiento</h2>
+            <img src="/oscar-olveiraa.github.io/assets/img/redes/vlan/tabla_asignacion_vlan.png" alt="Tabla de direccionamiento VLAN" 
+                style="max-width:100%; border-radius:8px;">
+            <p>
+                La tabla define la asignación de direcciones IP,
+                VLANs y puertos físicos en cada switch.
+            </p>
+        </section>
+
+
+        <section class="card">
+            <h2>🔌 Puertos de acceso</h2>
+            <p>
+                Los puertos de acceso se asignan a una única VLAN
+                según el dispositivo conectado.
+            </p>
+            <pre><code>
+interface fa0/1
+ switchport mode access
+ switchport access vlan 10
+
+interface fa0/2
+ switchport mode access
+ switchport access vlan 20
+
+interface fa0/3
+ switchport mode access
+ switchport access vlan 30
+    </code></pre>
+        </section>
+
+        <section class="card">
+            <h2>📞 VLAN de voz</h2>
+            <p>
+                Se configura una VLAN de voz para separar el tráfico telefónico
+                del tráfico de datos, garantizando calidad de servicio.
+            </p>
+            <pre><code>
+interface fa0/4
+ switchport mode access
+ switchport access vlan 10
+ switchport voice vlan 40
+    </code></pre>
+        </section>
+
+        <section class="card">
+            <h2>🛠️ Interfaces virtuales de administración (SVI)</h2>
+            <p>
+                Cada switch dispone de una interfaz virtual en la VLAN de gestión.
+                No se configura gateway para impedir conectividad entre switches.
+            </p>
+            <pre><code>
+interface vlan 99
+ ip address 192.168.99.252 255.255.255.0
+ no shutdown
+    </code></pre>
+        </section>
+
+        <section class="card">
+            <h2>🔗 Enlaces troncales</h2>
+            <p>
+                Los enlaces troncales permiten transportar múltiples VLANs
+                entre switches.
+            </p>
+            <pre><code>
+interface g0/1
+ switchport mode trunk
+ switchport trunk native vlan 100
+ switchport nonegotiate
+    </code></pre>
+        </section>
+
+        <section class="card">
+            <h2>🔍 Verificación</h2>
+            <pre><code>
+show vlan brief
+show interfaces trunk
+show ip interface brief
+    </code></pre>
+        </section>
+
+        <section class="card">
+            <h2>✅ Resultado</h2>
+            <p>
+                Los equipos se comunican únicamente dentro de su VLAN,
+                el tráfico de voz se mantiene separado y los enlaces
+                troncales funcionan correctamente.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>🧠 Conclusiones</h2>
+            <p>
+                Este laboratorio demuestra la importancia de la segmentación
+                de red mediante VLANs, una práctica esencial en redes
+                empresariales modernas para garantizar seguridad,
+                rendimiento y escalabilidad.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Laboratorio de Redes · Óscar Olveira Miniño</p>
+    </footer>
+
+</body>
+
+</html>

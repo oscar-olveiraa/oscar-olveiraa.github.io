@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>DHCP | Laboratorio de Redes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+
+<body>
+
+<header class="hero">
+  <h1>📡 Configuración de DHCP</h1>
+  <p class="subtitle">Laboratorio de redes</p>
+
+  <p class="hero-links">
+    <a href="../../redes.html">← Volver a laboratorios</a>
+  </p>
+</header>
+
+<main>
+
+  <section class="card">
+    <h2>📌 Objetivo</h2>
+    <p>
+      Configurar un servidor DHCP para asignación automática
+      de direcciones IP en una red local.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>🧩 Topología</h2>
+    <img src="../../assets/img/redes/dhcp-topologia.png"
+         alt="Topología DHCP"
+         style="max-width:100%; border-radius:8px;">
+  </section>
+
+  <section class="card">
+    <h2>⚙️ Configuración</h2>
+
+    <pre><code>
+ip dhcp pool RED_LOCAL
+ network 192.168.1.0 255.255.255.0
+ default-router 192.168.1.1
+ dns-server 8.8.8.8
+    </code></pre>
+
+  </section>
+
+  <section class="card">
+    <h2>✅ Resultado</h2>
+    <p>
+      Los equipos cliente obtienen automáticamente dirección IP,
+      puerta de enlace y DNS.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <p>Laboratorio de Redes · Óscar Olveira Miniño</p>
+</footer>
+
+</body>
+</html>

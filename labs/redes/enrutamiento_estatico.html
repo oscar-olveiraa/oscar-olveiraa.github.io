@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Enrutamiento Estático IPv4/IPv6 | Laboratorio de Redes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+
+<body>
+
+    <header class="hero">
+        <h1>🧭 Enrutamiento Estático IPv4 e IPv6</h1>
+        <p class="subtitle">Rutas estáticas, predeterminadas y flotantes</p>
+
+        <p class="hero-links">
+            <a href="../../redes.html">← Volver a laboratorios</a>
+        </p>
+    </header>
+
+    <main>
+
+        <section class="card">
+            <h2>📌 Objetivos</h2>
+            <ul>
+                <li>Configurar rutas predeterminadas IPv4 e IPv6.</li>
+                <li>Configurar rutas estáticas flotantes para redundancia.</li>
+                <li>Configurar rutas estáticas a redes LAN internas.</li>
+                <li>Configurar rutas de host IPv4 e IPv6.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>🧠 Antecedentes</h2>
+            <p>
+                En este laboratorio se implementa enrutamiento estático para permitir
+                conectividad entre redes internas y externas mediante dos proveedores
+                de servicios (ISP), incluyendo rutas flotantes para tolerancia a fallos.
+            </p>
+            <p>
+                Este enfoque se utiliza con fines educativos y no representa
+                necesariamente las mejores prácticas en redes reales.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>🧩 Topología de red</h2>
+            <img src="../../assets/img/redes/routing/topologia.png" alt="Topología de enrutamiento"
+                style="max-width:100%; border-radius:8px;">
+        </section>
+
+        <section class="card">
+            <h2>📋 Tabla de direccionamiento</h2>
+            <img src="../../assets/img/redes/routing/tabla_direccionamiento.png" alt="Tabla de direccionamiento"
+                style="max-width:100%; border-radius:8px;">
+        </section>
+
+        <section class="card">
+            <h2>⚙️ Parte 1: Rutas predeterminadas IPv4</h2>
+            <p>
+                Se configura una ruta predeterminada principal y una ruta flotante
+                para proporcionar redundancia hacia Internet.
+            </p>
+            <pre><code>
+Edge_Router(config)# ip route 0.0.0.0 0.0.0.0 10.10.10.1
+Edge_Router(config)# ip route 0.0.0.0 0.0.0.0 10.10.10.5 5
+            </code></pre>
+        </section>
+
+        <section class="card">
+            <h2>🌐 Parte 2: Rutas predeterminadas IPv6</h2>
+            <p>
+                Se configuran rutas predeterminadas IPv6 con salto siguiente,
+                incluyendo una ruta flotante con mayor distancia administrativa.
+            </p>
+            <pre><code>
+Edge_Router(config)# ipv6 route ::/0 2001:DB8:A:1::1
+Edge_Router(config)# ipv6 route ::/0 2001:DB8:A:2::1 5
+            </code></pre>
+        </section>
+
+        <section class="card">
+            <h2>🏠 Parte 3: Rutas IPv4 a las LAN internas</h2>
+            <p>
+                Los routers ISP deben conocer las redes LAN internas
+                para permitir el tráfico de retorno.
+            </p>
+            <pre><code>
+ISP1(config)# ip route 192.168.10.16 255.255.255.240 10.10.10.2
+ISP1(config)# ip route 192.168.11.32 255.255.255.224 10.10.10.2
+
+ISP1(config)# ip route 192.168.10.16 255.255.255.240 10.10.10.6 5
+ISP1(config)# ip route 192.168.11.32 255.255.255.224 10.10.10.6 5
+            </code></pre>
+        </section>
+
+        <section class="card">
+            <h2>🏡 Parte 4: Rutas IPv6 a las LAN internas</h2>
+            <p>
+                Se aplican rutas IPv6 estáticas y flotantes hacia las LAN
+                internas para mantener conectividad en caso de fallo.
+            </p>
+            <pre><code>
+ISP1(config)# ipv6 route 2001:DB8:1:10::/64 2001:DB8:A:1::2
+ISP1(config)# ipv6 route 2001:DB8:1:11::/64 2001:DB8:A:1::2
+
+ISP1(config)# ipv6 route 2001:DB8:1:10::/64 2001:DB8:A:2::2 5
+ISP1(config)# ipv6 route 2001:DB8:1:11::/64 2001:DB8:A:2::2 5
+            </code></pre>
+        </section>
+
+        <section class="card">
+            <h2>🎯 Parte 5: Rutas de host</h2>
+            <p>
+                Se configuran rutas específicas hacia el servidor del cliente
+                para optimizar y asegurar la conectividad.
+            </p>
+            <pre><code>
+Edge_Router(config)# ip route 198.0.0.10 255.255.255.255 10.10.10.1
+Edge_Router(config)# ip route 198.0.0.10 255.255.255.255 10.10.10.5 5
+
+Edge_Router(config)# ipv6 route 2001:DB8:F:F::10/128 2001:DB8:A:1::1
+Edge_Router(config)# ipv6 route 2001:DB8:F:F::10/128 2001:DB8:A:2::1 5
+            </code></pre>
+        </section>
+
+        <section class="card">
+            <h2>🔍 Verificación</h2>
+            <pre><code>
+show ip route
+show ipv6 route
+ping 198.0.0.10
+ping 2001:DB8:F:F::10
+            </code></pre>
+        </section>
+
+        <section class="card">
+            <h2>✅ Resultado</h2>
+            <p>
+                Los hosts de LAN 1 y LAN 2 tienen conectividad completa con el
+                servidor del cliente mediante IPv4 e IPv6, manteniendo la
+                comunicación incluso si el enlace principal falla.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>🧠 Conclusiones</h2>
+            <p>
+                Este laboratorio demuestra el funcionamiento del enrutamiento
+                estático y flotante, así como su utilidad para proporcionar
+                redundancia y control del tráfico en redes empresariales.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Laboratorio de Redes · Óscar Olveira Miniño</p>
+    </footer>
+
+</body>
+
+</html>

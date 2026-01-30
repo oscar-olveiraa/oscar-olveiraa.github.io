@@ -85,7 +85,7 @@ end
 
         <section class="card">
             <h2>📋 Tabla de direccionamiento</h2>
-            <img src="../../assets/img/redes/vlan/tabla_asignacion_vlan.png" alt="Tabla de direccionamiento VLAN" 
+            <img src="../../assets/img/redes/vlan/tabla_asignacion_vlan.png" alt="Tabla de direccionamiento VLAN"
                 style="max-width:100%; border-radius:8px;">
             <p>
                 La tabla define la asignación de direcciones IP,
@@ -119,7 +119,7 @@ interface fa0/3
             <h2>📞 VLAN de voz</h2>
             <p>
                 Se configura una VLAN de voz para separar el tráfico telefónico
-                del tráfico de datos, garantizando calidad de servicio.
+                del tráfico de datos, garantizando calidad de servicio (QoS).
             </p>
             <pre><code>
 interface fa0/4
@@ -146,7 +146,9 @@ interface vlan 99
             <h2>🔗 Enlaces troncales</h2>
             <p>
                 Los enlaces troncales permiten transportar múltiples VLANs
-                entre switches.
+                entre switches.Importante establecer una VLAN nativa y que no sea igual que el resto ya que eso crearía
+                un problema grande de seguridad y propiciando a ataques a nivel de capa 2 como 'double-tagging'. Esta
+                VLAN nativa se usa para tráfico que no está etiquetado como una VLAN.
             </p>
             <pre><code>
 interface g0/1
@@ -163,6 +165,9 @@ show vlan brief
 show interfaces trunk
 show ip interface brief
     </code></pre>
+
+            <img src="../../assets/img/redes/vlan/comprobacion_comando_vlan.png" alt="Tabla de direccionamiento VLAN"
+                style="max-width:100%; border-radius:8px;">
         </section>
 
         <section class="card">

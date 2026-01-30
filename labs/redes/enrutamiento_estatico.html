@@ -40,19 +40,19 @@
             </p>
             <p>
                 Este enfoque se utiliza con fines educativos y no representa
-                necesariamente las mejores prácticas en redes reales.
-            </p>
+                necesariamente las mejores prácticas en redes reales ya que con el enrutamiento dinámico evitaríamos los fallos humanos para establecer las rutas además de gracias a protocolos como OSPF evitarÍamos que un equipo quedara sin conexión al fallar su enlace ya que la red converguería de forma automática calculando nuevas rutas para que los datos viajaran por otro enlace.
+            </p> 
         </section>
 
         <section class="card">
             <h2>🧩 Topología de red</h2>
-            <img src="../../assets/img/redes/routing/topologia.png" alt="Topología de enrutamiento"
+            <img src="../../assets/img/redes/routing/topologia_routing.png" alt="Topología de enrutamiento"
                 style="max-width:100%; border-radius:8px;">
         </section>
 
         <section class="card">
             <h2>📋 Tabla de direccionamiento</h2>
-            <img src="../../assets/img/redes/routing/tabla_direccionamiento.png" alt="Tabla de direccionamiento"
+            <img src="../../assets/img/redes/routing/tabla_asignacion_routing.png" alt="Tabla de direccionamiento"
                 style="max-width:100%; border-radius:8px;">
         </section>
 
@@ -60,7 +60,7 @@
             <h2>⚙️ Parte 1: Rutas predeterminadas IPv4</h2>
             <p>
                 Se configura una ruta predeterminada principal y una ruta flotante
-                para proporcionar redundancia hacia Internet.
+                para proporcionar redundancia hacia Internet. La ruta flotante se establece añadiendo una distancia administrativa a esa ruta, en este caso 5, para que cuando falle la ruta principal los datos vayan por la otra ruta.
             </p>
             <pre><code>
 Edge_Router(config)# ip route 0.0.0.0 0.0.0.0 10.10.10.1
@@ -72,7 +72,7 @@ Edge_Router(config)# ip route 0.0.0.0 0.0.0.0 10.10.10.5 5
             <h2>🌐 Parte 2: Rutas predeterminadas IPv6</h2>
             <p>
                 Se configuran rutas predeterminadas IPv6 con salto siguiente,
-                incluyendo una ruta flotante con mayor distancia administrativa.
+                incluyendo una ruta flotante.
             </p>
             <pre><code>
 Edge_Router(config)# ipv6 route ::/0 2001:DB8:A:1::1
@@ -98,8 +98,8 @@ ISP1(config)# ip route 192.168.11.32 255.255.255.224 10.10.10.6 5
         <section class="card">
             <h2>🏡 Parte 4: Rutas IPv6 a las LAN internas</h2>
             <p>
-                Se aplican rutas IPv6 estáticas y flotantes hacia las LAN
-                internas para mantener conectividad en caso de fallo.
+                Se aplican rutas IPv6 estáticas hacia las LAN
+                internas igual que con IPv4.
             </p>
             <pre><code>
 ISP1(config)# ipv6 route 2001:DB8:1:10::/64 2001:DB8:A:1::2
@@ -133,6 +133,9 @@ show ipv6 route
 ping 198.0.0.10
 ping 2001:DB8:F:F::10
             </code></pre>
+
+            <img src="../../assets/img/redes/routing/rutas_establecidas_routing.png" alt="Comprobación rutas establecidas"
+                style="max-width:100%; border-radius:8px;">
         </section>
 
         <section class="card">
@@ -140,7 +143,7 @@ ping 2001:DB8:F:F::10
             <p>
                 Los hosts de LAN 1 y LAN 2 tienen conectividad completa con el
                 servidor del cliente mediante IPv4 e IPv6, manteniendo la
-                comunicación incluso si el enlace principal falla.
+                comunicación incluso si el enlace principal falla. También se puede observar que IPv4 y IPv6 se pueden configurar y usar al mismo tiempo gracias a la técnica Dual Stack, donde los dispositivos ejecutan pilas de protocolo IPv4 e IPv6.
             </p>
         </section>
 
@@ -148,8 +151,7 @@ ping 2001:DB8:F:F::10
             <h2>🧠 Conclusiones</h2>
             <p>
                 Este laboratorio demuestra el funcionamiento del enrutamiento
-                estático y flotante, así como su utilidad para proporcionar
-                redundancia y control del tráfico en redes empresariales.
+                estático y flotante tanto para IPv4 y IPv6, así como su utilidad para proporcionar redundancia y control del tráfico en redes empresariales.
             </p>
         </section>
 

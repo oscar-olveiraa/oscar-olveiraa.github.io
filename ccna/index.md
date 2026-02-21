@@ -40,7 +40,7 @@ permalink: /ccna/
             <p>
                 Cómo navegar por la CLI (Command Line Interface) de los dispositivos.
                 <br>
-                <a href="{{ site.baseurl }}/_ccna/navegacion_ios/">Explorar sección →</a>
+                <a href="/{{ site.baseurl }}/_ccna/navegacion_ios/">Explorar sección →</a>
             </p>
         </div>
 

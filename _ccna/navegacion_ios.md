@@ -21,6 +21,7 @@ Cisco IOS utiliza distintos niveles jerárquicos de acceso. Cada modo permite ej
 
 Es el primer modo al acceder al dispositivo.
 
+
 Router>
 
 

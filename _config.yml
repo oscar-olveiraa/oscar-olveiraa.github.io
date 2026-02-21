@@ -1,4 +1,5 @@
 theme: jekyll-theme-minimal
+baseurl: ""
 
 title: Óscar Olveira Miniño
 description: Portfolio profesional y documentación técnica de redes (CCNA)
@@ -9,3 +10,4 @@ permalink: pretty
 collections:
   ccna:
     output: true
+    permalink: /ccna/:name/

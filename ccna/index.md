@@ -40,7 +40,7 @@ permalink: /ccna/
             <p>
                 Cómo navegar por la CLI (Command Line Interface) de los dispositivos.
                 <br>
-                <a href="/{{ site.baseurl }}/_ccna/navegacion_ios/">Explorar sección →</a>
+                <a href="/ccna/navegacion_ios/">Explorar sección →</a>
             </p>
         </div>
 
@@ -49,7 +49,7 @@ permalink: /ccna/
             <p>
                 Pasos para configurar y establecer un nivel de seguridad en los dispositivos de red.
                 <br>
-                <a href="{{ site.baseurl }}/ccna/configuracion-basica/">Explorar sección →</a>
+                <a href="/ccna/navegacion_ios/">Explorar sección →</a>
             </p>
         </div>
 

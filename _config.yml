@@ -3,8 +3,3 @@ baseurl: ""
 
 markdown: kramdown
 permalink: pretty
-
-collections:
-  ccna:
-    output: true
-    permalink: /ccna/:name/

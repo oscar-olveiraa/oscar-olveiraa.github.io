@@ -1,3 +1,11 @@
 theme: jekyll-theme-minimal
-title: Oscar's homepage
-description: Bookmark this to keep an eye on my project updates!
+
+title: Óscar Olveira Miniño
+description: Portfolio profesional y documentación técnica de redes (CCNA)
+
+markdown: kramdown
+permalink: pretty
+
+collections:
+  ccna:
+    output: true

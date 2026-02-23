@@ -26,11 +26,11 @@ Prompt -> *Router >*
 * No permite realizar configuraciones.
 * Ejemplos:
 
-    ````
+    ```
     show version
     show ip interface brief
     ping 192.168.1.1
-    ````
+    ```
 
 ---
 
@@ -156,11 +156,11 @@ Usando el signo de interrogación podemos ver la lista de comandos que podemos e
 
 Ejemplo:
 
-![](/oscar-olveiraa.github.io/ccna/navegacion_ios/captura1)
+![](/ccna/navegacion_ios/captura1.png)
 
 Si ejecutas un comando que no indentifica la IOS saltará esto:
 
-![](/oscar-olveiraa.github.io/ccna/navegacion_ios/captura2)
+![](ccna/navegacion_ios/captura2.png)
 
 Para arreglar esto presionas las teclas **ctrl+shift+6** y dentro de la configuración global ejectuas el comando:
 

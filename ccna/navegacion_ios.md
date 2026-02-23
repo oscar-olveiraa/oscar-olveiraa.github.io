@@ -29,11 +29,11 @@ Prompt -> *Router >*
 
 ◇ Ejemplos:
 
-    ```
+    ````bash
     show version
     show ip interface brief
     ping 192.168.1.1
-    ```
+    ````
 
 ---
 
@@ -41,7 +41,7 @@ Prompt -> *Router >*
 
 Se accede desde el modo usuario con:
 
-````
+````bash
 enable
 ````
 
@@ -50,13 +50,15 @@ El prompt cambia a -> *Router#*
 
 Este modo permite:
 
-- Ejecutar comandos avanzados
-- Acceder al modo de configuración
-- Guardar configuraciones
+◇ Ejecutar comandos avanzados
+
+◇ Acceder al modo de configuración
+
+◇ Guardar configuraciones
 
 Para volver al modo usuario:
 
-````
+````bash
 disable
 ````
 
@@ -67,7 +69,7 @@ disable
 
 Desde el modo privilegiado ejecutar el comando:
 
-````
+````bash
 configure terminal
 ````
 
@@ -77,7 +79,7 @@ Prompt -> *Router(config)#*
 
 Permite realizar configuraciones globales como:
 
-````
+````bash
 hostname R1
 ip routing
 ````
@@ -89,7 +91,7 @@ ip routing
 
 Desde modo global:
 
-````
+````bash
 interface {interface_name}
 ````
 
@@ -99,7 +101,7 @@ Prompt -> *Router(config-if)#*
 
 Ejemplo de configuración:
 
-````
+````bash
 ip address 192.168.1.1 255.255.255.0
 no shutdown
 description Enlace hacia LAN
@@ -107,7 +109,7 @@ description Enlace hacia LAN
 
 También se puede acceder a un rango de interfaces ya que nos puede interesar para ahorrar tiempo si la configuración es igual para un grupo de interfaces:
 
-````
+````bash
 interface range {interface_name}
 ````
 
@@ -119,11 +121,11 @@ interface range {interface_name}
 Configuración de la linea de consola o acceso remoto. Ambas sirven para acceder al dispositivo de red y administrarlo desde un ordenador. Por consola se utiliza un cable especial y tienes que estar en el lugar donde se ubica el dispositivo mientras que por acceso remoto se usa telnet o ssh:
 
 
-````
+````bash
 line console 0
 ````
 
-````
+````bash
 line vty 0 4
 ````
 
@@ -133,7 +135,7 @@ Prompt -> *Router(config-line)#*
 
 Ejemplo:
 
-````
+````bash
 password cisco
 login
 ````
@@ -169,7 +171,7 @@ Si ejecutas un comando que no indentifica la IOS saltará esto:
 
 Para arreglar esto presionas las teclas **ctrl+shift+6** y dentro de la configuración global ejectuas el comando:
 
-````
+````bash
 no ip domain-lookpup
 ````
 
@@ -192,7 +194,7 @@ conf[TAB] pasa a autocompletarse como configure
 
 Siempre que no haya ambigüedad pueder abreviar, por ejemplo:
 
-````
+````bash
 conf t
 int g0/0
 ````
@@ -203,14 +205,14 @@ int g0/0
 
 Para guardar cambios:
 
-````
+````bash
 copy running-config startup-config
 ````
 
 
 Forma abreviada:
 
-````
+````bash
 wr
 ````
 
@@ -220,7 +222,7 @@ Esto se utilizar para cuando tengas que hacer un **reload** de un dispositivo no
 
 ## Comandos básicos de verificación recomendados
 
-````
+````bash
 show running-config
 show ip interface brief
 show interfaces
@@ -233,7 +235,9 @@ traceroute
 ## Buenas prácticas
 
 ◇ Documentar cada interfaz con `description`
+
 ◇ Verificar antes y después de configurar
+
 ◇ Guardar la configuración tras cambios relevantes
 
 ---

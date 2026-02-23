@@ -7,7 +7,7 @@ title: Navegación en Cisco IOS
 
 La administración de routers y switches Cisco se realiza a través del sistema operativo **Cisco IOS (Internetwork Operating System)**.
 
-Comprender su estructura jerárquica de modos es fundamental para realizar configuraciones correctamente y evitar errores.
+Comprender su estructura jerárquica de modos es fundamental para realizar configuraciones correctamente.
 
 ---
 
@@ -17,40 +17,32 @@ Cisco IOS utiliza distintos niveles jerárquicos de acceso. Cada modo permite ej
 
 ---
 
-### 1. User EXEC Mode
+### 1. User EXEC Mode (modo usuario)
 
-Es el primer modo al acceder al dispositivo.
+Prompt -> *Router >*
 
+* Es el primer modo al acceder al dispositivo.
+* Permite ejecutar comandos básicos de verificación.
+* No permite realizar configuraciones.
+* Ejemplos:
 
-Router>
-
-
-Permite ejecutar comandos básicos de verificación.
-
-Ejemplos:
-
-
-show version
-show ip interface brief
-ping 192.168.1.1
-
-
-No permite realizar configuraciones.
+    ````
+    show version
+    show ip interface brief
+    ping 192.168.1.1
+    ````
 
 ---
 
-### 2. Privileged EXEC Mode
+### 2. Privileged EXEC Mode (modo privilegiado)
 
 Se accede desde el modo usuario con:
 
-
+````
 enable
+````
 
-
-El prompt cambia a:
-
-
-Router#
+El prompt cambia a -> *Router#*
 
 
 Este modo permite:
@@ -61,31 +53,31 @@ Este modo permite:
 
 Para volver al modo usuario:
 
-
+````
 disable
+````
 
 
 ---
 
-### 3. Global Configuration Mode
+### 3. Global Configuration Mode (modo global de configuración)
 
-Desde el modo privilegiado:
+Desde el modo privilegiado ejecutar el comando:
 
-
+````
 configure terminal
+````
 
 
-Prompt:
-
-
-Router(config)#
+Prompt -> *Router(config)#*
 
 
 Permite realizar configuraciones globales como:
 
-
+````
 hostname R1
 ip routing
+````
 
 
 ---
@@ -94,88 +86,88 @@ ip routing
 
 Desde modo global:
 
-
-interface gigabitEthernet 0/0
-
-
-Prompt:
+````
+interface {interface_name}
+````
 
 
-Router(config-if)#
+Prompt -> *Router(config-if)#*
 
 
 Ejemplo de configuración:
 
-
+````
 ip address 192.168.1.1 255.255.255.0
 no shutdown
 description Enlace hacia LAN
+````
+
+También se puede acceder a un rango de interfaces ya que nos puede interesar para ahorrar tiempo si la configuración es igual para un grupo de interfaces:
+
+````
+interface range {interface_name}
+````
 
 
 ---
 
 ### 5. Line Configuration Mode
 
-Configuración de consola o acceso remoto:
+Configuración de la linea de consola o acceso remoto. Ambas sirven para acceder al dispositivo de red y administrarlo desde un ordenador. Por consola se utiliza un cable especial y tienes que estar en el lugar donde se ubica el dispositivo mientras que por acceso remoto se usa telnet o ssh:
 
 
+````
 line console 0
+````
 
-
-o
-
-
+````
 line vty 0 4
+````
 
 
-Prompt:
-
-
-Router(config-line)#
+Prompt -> *Router(config-line)#*
 
 
 Ejemplo:
 
-
+````
 password cisco
 login
+````
 
 
 ---
 
-## Comandos de navegación
+## Comandos de navegación y ayuda
 
 IOS es jerárquico. Para moverse entre modos:
 
 
-exit
-end
-disable
-
-
 - `exit` → retrocede un nivel
-- `end` → vuelve directamente a modo privilegiado
+- `end` → vuelve directamente a modo privilegiado o combinación **ctrl+Z**
 - `disable` → vuelve al modo usuario
 
 ---
 
-## Ayuda y productividad
-
-IOS incorpora herramientas muy útiles.
-
 ### Ayuda contextual
 
-
-?
+Usando el signo de interrogación podemos ver la lista de comandos que podemos ejectuar.
 
 
 Ejemplo:
 
+![](/oscar-olveiraa.github.io/ccna/navegacion_ios/captura1.png)
 
-show ?
+Si ejecutas un comando que no indentifica la IOS saltará esto:
 
+![](/oscar-olveiraa.github.io/ccna/navegacion_ios/captura2.png)
 
-Muestra los comandos disponibles relacionados.
+Para arreglar esto presionas las teclas **ctrl+shift+6** y dentro de la configuración global ejectuas el comando:
+
+````
+no ip domain-lookpup
+````
+
 
 ---
 
@@ -185,27 +177,20 @@ La tecla TAB completa comandos automáticamente.
 
 Ejemplo:
 
+conf[TAB] pasa a autocompletarse como configure
 
-conf<TAB>
-
-
-Se convierte en:
-
-
-configure
-
+💡OJO: en el caso que haya más opciones para el comando las muestra ya que por ambigüedad no sabe que comando quieres utilizar.
 
 ---
 
 ### Abreviaciones válidas
 
-Siempre que no haya ambigüedad:
+Siempre que no haya ambigüedad pueder abreviar, por ejemplo:
 
-
+````
 conf t
 int g0/0
-sh ip int br
-
+````
 
 ---
 
@@ -213,25 +198,30 @@ sh ip int br
 
 Para guardar cambios:
 
-
+````
 copy running-config startup-config
+````
 
 
 Forma abreviada:
 
-
+````
 wr
+````
 
+Esto se utilizar para cuando tengas que hacer un **reload** de un dispositivo no se pierdan los cambios ya que se guardan en la NVRAM, una memoria no volátil. 
 
 ---
 
 ## Comandos básicos de verificación recomendados
 
-
+````
 show running-config
 show ip interface brief
 show interfaces
-
+ping
+traceroute
+````
 
 ---
 
@@ -240,7 +230,6 @@ show interfaces
 - Documentar cada interfaz con `description`
 - Verificar antes y después de configurar
 - Guardar la configuración tras cambios relevantes
-- Mantener orden jerárquico al configurar
 
 ---
 

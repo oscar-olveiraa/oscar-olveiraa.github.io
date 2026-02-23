@@ -49,7 +49,7 @@ permalink: /ccna/
             <p>
                 Pasos para configurar y establecer un nivel de seguridad en los dispositivos de red.
                 <br>
-                <a href="/ccna/navegacion_ios/">Explorar sección →</a>
+                <a href="/ccna/configuracion_basica/">Explorar sección →</a>
             </p>
         </div>
 

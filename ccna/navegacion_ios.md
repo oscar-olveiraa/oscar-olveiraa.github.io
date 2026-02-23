@@ -156,11 +156,11 @@ Usando el signo de interrogación podemos ver la lista de comandos que podemos e
 
 Ejemplo:
 
-![](/oscar-olveiraa.github.io/ccna/navegacion_ios/captura1.png)
+![](/oscar-olveiraa.github.io/ccna/navegacion_ios/captura1)
 
 Si ejecutas un comando que no indentifica la IOS saltará esto:
 
-![](/oscar-olveiraa.github.io/ccna/navegacion_ios/captura2.png)
+![](/oscar-olveiraa.github.io/ccna/navegacion_ios/captura2)
 
 Para arreglar esto presionas las teclas **ctrl+shift+6** y dentro de la configuración global ejectuas el comando:
 

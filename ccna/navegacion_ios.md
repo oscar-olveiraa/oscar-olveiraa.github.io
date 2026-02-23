@@ -21,10 +21,10 @@ Cisco IOS utiliza distintos niveles jerárquicos de acceso. Cada modo permite ej
 
 Prompt -> *Router >*
 
-* Es el primer modo al acceder al dispositivo.
-* Permite ejecutar comandos básicos de verificación.
-* No permite realizar configuraciones.
-* Ejemplos:
+*Es el primer modo al acceder al dispositivo.
+*Permite ejecutar comandos básicos de verificación.
+*No permite realizar configuraciones.
+*Ejemplos:
 
     ```
     show version
@@ -143,9 +143,9 @@ login
 IOS es jerárquico. Para moverse entre modos:
 
 
-- `exit` → retrocede un nivel
-- `end` → vuelve directamente a modo privilegiado o combinación **ctrl+Z**
-- `disable` → vuelve al modo usuario
+*`exit` → retrocede un nivel
+*`end` → vuelve directamente a modo privilegiado o combinación **ctrl+Z**
+*`disable` → vuelve al modo usuario
 
 ---
 
@@ -160,7 +160,7 @@ Ejemplo:
 
 Si ejecutas un comando que no indentifica la IOS saltará esto:
 
-![](ccna/navegacion_ios/captura2.png)
+![](/ccna/navegacion_ios/captura2.png)
 
 Para arreglar esto presionas las teclas **ctrl+shift+6** y dentro de la configuración global ejectuas el comando:
 
@@ -237,9 +237,9 @@ traceroute
 
 Cisco IOS funciona mediante una estructura jerárquica de modos:
 
-1. User EXEC (`>`)
-2. Privileged EXEC (`#`)
-3. Global Configuration
-4. Submodos específicos (interface, line, router…)
+1.User EXEC (`>`)
+2.Privileged EXEC (`#`)
+3.Global Configuration
+4.Submodos específicos (interface, line, router…)
 
 Dominar la navegación es el primer paso para administrar dispositivos de red correctamente.

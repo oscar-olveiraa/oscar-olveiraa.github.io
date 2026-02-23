@@ -15,7 +15,7 @@ hostname S1
 
 Dando como resultado lo siguiente:
 
-![](/oscar-olveiraa.github.io/ccna/configuracion_basica/captura3)
+![](/ccna/configuracion_basica/captura3.png)
 
 
 🚨 IMPORTANTE:
@@ -34,7 +34,7 @@ Dando como resultado lo siguiente:
 
 Para proteger el modo EXEC del usuario ejectuamos los siguientes comandos:
 
-![](/oscar-olveiraa.github.io/ccna/configuracion_basica/captura4)
+![](/ccna/configuracion_basica/captura4.png)
 
 
 Para protefer el modo EXEC privilegaido ejecutamos el siguiente comando en el modo configuración global:
@@ -45,7 +45,7 @@ Para protefer el modo EXEC privilegaido ejecutamos el siguiente comando en el mo
 
 Para proteger las líneas para el acceso remoto ejecutamos los siguientes comandos:
 
-![](/oscar-olveiraa.github.io/ccna/configuracion_basica/captura5.png)
+![](/ccna/configuracion_basica/captura5.png)
 
 
 Para encriptar las contraseñas en los archivos startup-config y running-config ejectuamos el siguiente comando el modo configuración global:
@@ -67,5 +67,5 @@ banner motd #Only authorized people#
 
 Para acceder a un switch de forma remota se configura una SVI (Switch Virtual Interface), dentro de la configuración global:
 
-![](/oscar-olveiraa.github.io/ccna/navegacion_ios/captura6.png)
+![](/ccna/navegacion_ios/captura6.png)
 

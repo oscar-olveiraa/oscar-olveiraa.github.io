@@ -9,7 +9,7 @@ title: Configuración básica de dispositivos
 
 Para cambiar el nombre a un dispositivo se ejecuta el siguiente comando en la configuración global:
 
-````
+````bash
 hostname S1
 ````
 
@@ -20,15 +20,15 @@ Dando como resultado lo siguiente:
 
 🚨 IMPORTANTE:
 
-* Comenzar con una letra.
+◇ Comenzar con una letra.
 
-* No contener espacios.
+◇ No contener espacios.
 
-* Finalizar con una letra o dígito.
+◇ Finalizar con una letra o dígito.
 
-* Utilizar únicamente letras, dígitos y guiones.
+◇ Utilizar únicamente letras, dígitos y guiones.
 
-* Tener menos de 64 caracteres de longitud.
+◇ Tener menos de 64 caracteres de longitud.
 
 ## Configurar contraseñas
 
@@ -38,7 +38,8 @@ Para proteger el modo EXEC del usuario ejectuamos los siguientes comandos:
 
 
 Para protefer el modo EXEC privilegaido ejecutamos el siguiente comando en el modo configuración global:
- ````
+
+ ````bash
  enable secret {contraseña}
  ````
 
@@ -50,7 +51,7 @@ Para proteger las líneas para el acceso remoto ejecutamos los siguientes comand
 
 Para encriptar las contraseñas en los archivos startup-config y running-config ejectuamos el siguiente comando el modo configuración global:
 
-````
+````bash
 service password-encryption
 ````
 
@@ -58,7 +59,7 @@ service password-encryption
 
 Para mostrar un mensaje banner, ejecutamos el siguiente comando en el modo de configuración global:
 
-````
+````bash
 banner motd #Only authorized people#
 ````
 🚨 IMPORTANTE: esto es importante para advertir a personal no autorizado al intentar acceder, además el símbolo '#' se usa como carácter delimitador.

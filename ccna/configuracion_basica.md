@@ -44,15 +44,29 @@ Para protefer el modo EXEC privilegaido ejecutamos el siguiente comando en el mo
  ````
 
 
-Para proteger las líneas para el acceso remoto ejecutamos los siguientes comandos:
+Para proteger las líneas para el acceso remoto ejecutamos los siguientes comandos. Importante destacar que en este proceso se activa tambien SSH ya que Telnet no es un protocolo seguro:
 
 ![](/ccna/configuracion_basica/captura5.png)
+
+El nombre del dominio es un ejemplo, el tamaño de la clave RSA tiene que ser mínimo de 1024 y ser base 2 (osea 512,1024,2048,4096...), el tiempo que se establece en el comando *exec-timeout* es en minutos y se aplica cuando el administrador queda con la conexión inactiva, entonces se cierra automáticamente pasados esos minutos.
 
 
 Para encriptar las contraseñas en los archivos startup-config y running-config ejectuamos el siguiente comando el modo configuración global:
 
 ````bash
 service password-encryption
+````
+
+Para establecer la longitud mínima en las contraseñas se usa el siguiente comando en el modo de configuración global:
+
+````
+security password min-length {length}
+````
+
+Para evitar ataques de fuerza bruta estableces un máximo de intentos en x segundos con el siguiente comando en el modo de configuración global:
+
+````
+login block-for {time} attempts {n-attempts} within {time}
 ````
 
 🚨 IMPORTANTE: destacar que cuando usamos **secret** en vez de **password**, las contraseñas ya se encriptan solas.
@@ -68,7 +82,7 @@ banner motd #Only authorized people#
 
 Para acceder a un switch de forma remota se configura una SVI (Switch Virtual Interface), dentro de la configuración global:
 
-![](/ccna/navegacion_ios/captura6.png)
+![](/ccna/configuracion_basica/captura6.png)
 
 Al acceder de forma remota, el switch tiene que tener una puerta de enlace predeterminada para el tráfico que genera. La puerta de enlace predeterminada normalmente es la interfaz del router que conecta a la LAN de ese switch. Para configurar una puerta de enlace en un switch, en el modo de configuración global se ejecuta el siguiente comando:
 

@@ -53,6 +53,15 @@ permalink: /ccna/
             </p>
         </div>
 
+        <div>
+            <span>Solucionar problemas</span>
+            <p>
+                Pasos para ver información de los dispositivos de red y poder solucionar problemas de configuración.
+                <br>
+                <a href="/ccna/solucionar_problemas/">Explorar sección →</a>
+            </p>
+        </div>
+
     </div>
 </section>
 

@@ -113,6 +113,7 @@ no shutdown
 5)show interfaces
 6)show ip interface
 7)show ipv6 interface
+8)show running-config
 ````
 
 1-2)El resultado muestra todas las interfaces, sus direcciones IPv4/IPv6 y el estado actual de forma abreviada.
@@ -122,6 +123,8 @@ no shutdown
 5)Este comando muestra estadísticas de todas las interfaces del dispositivo. Sólo muestra la información de direcciones IPv4.
 
 6-7)Muestra las estadísticas de IPv4/IPv6 correspondientes a todas las interfaces de un router.
+
+8)Muestra el archivo **running-config**. Este archivo muestra la configuración del router que está guardado en memoria RAM. 
 
 ## Comandos para prueba de conectividad
 

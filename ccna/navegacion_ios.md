@@ -98,15 +98,6 @@ interface {interface_name}
 
 Prompt -> *Router(config-if)#*
 
-
-Ejemplo de configuración:
-
-````bash
-ip address 192.168.1.1 255.255.255.0
-no shutdown
-description Enlace hacia LAN
-````
-
 También se puede acceder a un rango de interfaces ya que nos puede interesar para ahorrar tiempo si la configuración es igual para un grupo de interfaces:
 
 ````bash

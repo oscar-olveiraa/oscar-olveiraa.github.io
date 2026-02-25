@@ -18,4 +18,4 @@ undegub all
 Para mostrar los mensajes de registro usar el comando **terminal monitor**. Para desactivar los mensajes **terminal no monitor**.
 
 
-Para mostrar información de configuración ver el apartado de **comandos de verificiación** de la guía [Configuración básica de dispositivos](/ccna/configuracion_basica.md)
+Para mostrar información de configuración ver el apartado de **comandos de verificiación** de la guía [Configuración básica de dispositivos](/ccna/configuracion_basica/)

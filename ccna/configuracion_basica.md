@@ -78,54 +78,6 @@ banner motd #Only authorized people#
 ````
 🚨 IMPORTANTE: esto es importante para advertir a personal no autorizado al intentar acceder, además el símbolo '#' se usa como carácter delimitador.
 
-## Configuración interfaz virtual en un switch
-
-Para acceder a un switch de forma remota se configura una SVI (Switch Virtual Interface), dentro de la configuración global:
-
-![](/ccna/configuracion_basica/captura6.png)
-
-Al acceder de forma remota, el switch tiene que tener una puerta de enlace predeterminada para el tráfico que genera. La puerta de enlace predeterminada normalmente es la interfaz del router que conecta a la LAN de ese switch. Para configurar una puerta de enlace en un switch, en el modo de configuración global se ejecuta el siguiente comando:
-
-````
-ip default-gateway {ip-address}
-````
-
-
-## Configurar interfaces en router
-
-Para configurar una interfaz en un router se va a ejecutar los siguientes comandos dentro dentro del modo de configuración de interfaces:
-
-````
-description {Descripción de la interfaz}
-ip address {ip-address} {subnet-mask}
-ipv6 address {ipv6-address/prefix-length}
-ipv6 address {ipv6-link-local-address} link-local
-no shutdown
-````
-
-## Comandos de verificación
-
-````
-1)show ip interface brief
-2)show ipv6 interface brief
-3)show ip route
-4)show ipv6 route
-5)show interfaces
-6)show ip interface
-7)show ipv6 interface
-8)show running-config
-````
-
-1-2)El resultado muestra todas las interfaces, sus direcciones IPv4/IPv6 y el estado actual de forma abreviada.
-
-3-4)Muestra la tabla de enrutamiento almacenada en RAM.
-
-5)Este comando muestra estadísticas de todas las interfaces del dispositivo. Sólo muestra la información de direcciones IPv4.
-
-6-7)Muestra las estadísticas de IPv4/IPv6 correspondientes a todas las interfaces de un router.
-
-8)Muestra el archivo **running-config**. Este archivo muestra la configuración del router que está guardado en memoria RAM. 
-
 ## Comandos para prueba de conectividad
 
 Desde el modo de usuario o privilegiado podemos comprobar la conexión a otros dispositivos con los siguientes comandos:

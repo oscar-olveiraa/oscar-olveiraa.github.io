@@ -54,11 +54,29 @@ permalink: /ccna/
         </div>
 
         <div>
-            <span>Solucionar problemas</span>
+            <span>Solucionar problemas en dispositivos</span>
             <p>
                 Pasos para ver información de los dispositivos de red y poder solucionar problemas de configuración.
                 <br>
                 <a href="/ccna/solucionar_problemas/">Explorar sección →</a>
+            </p>
+        </div>
+
+        <div>
+            <span>Configuración de un switch</span>
+            <p>
+                Pasos para configurar un switch con parámetros inicales.
+                <br>
+                <a href="/ccna/configuracion_switch/">Explorar sección →</a>
+            </p>
+        </div>
+
+        <div>
+            <span>Configuración de un router</span>
+            <p>
+                Pasos para configurar un router con parámetros inicales.
+                <br>
+                <a href="/ccna/configuracion_router/">Explorar sección →</a>
             </p>
         </div>
 

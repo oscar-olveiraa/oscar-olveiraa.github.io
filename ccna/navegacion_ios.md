@@ -194,6 +194,8 @@ int g0/0
 
 ## Guardado de configuración
 
+🚨 IMPORTANTE: guardar siempre que se haga un cambio en el dispositivo (asignar IP a las interfaces de un router, crear una ACL...)
+
 Para guardar cambios:
 
 ````bash
@@ -207,7 +209,7 @@ Forma abreviada:
 wr
 ````
 
-Esto se utilizar para cuando tengas que hacer un **reload** de un dispositivo no se pierdan los cambios ya que se guardan en la NVRAM, una memoria no volátil. 
+Esto se utilizar para cuando tengas que hacer un **reload** de un dispositivo no se pierdan los cambios ya que se guardan en la NVRAM, una memoria no volátil.
 
 ---
 
@@ -222,6 +224,25 @@ traceroute
 ````
 
 ---
+
+## Filtrado de resultados de los comandos show
+
+◇ section: Muestra la sección completa que comienza con la expresión de filtrado.
+
+◇ include: Incluye todas las líneas de resultados que coinciden con la expresión de filtrado.
+
+◇ exclude: Excluye todas las líneas de resultados que coinciden con la expresión de filtrado.
+
+◇ begin: Muestra todas las líneas de resultados desde determinado punto, comenzando por la línea que coincide con la expresión de filtrado
+
+Ejemplos de uso:
+
+````
+show ip route | exclude static
+show ip running-config | section interface
+````
+
+
 
 ## Buenas prácticas
 

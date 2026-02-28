@@ -80,6 +80,15 @@ permalink: /ccna/
             </p>
         </div>
 
+        <div>
+            <span>VLAN</span>
+            <p>
+                Pasos para crear y configurar VLAN.
+                <br>
+                <a href="/ccna/vlan/">Explorar sección →</a>
+            </p>
+        </div>
+
     </div>
 </section>
 

@@ -89,6 +89,15 @@ permalink: /ccna/
             </p>
         </div>
 
+        <div>
+            <span>Inter-VLAN routing</span>
+            <p>
+                Pasos para crear y configurar Inte-VLAN routing.
+                <br>
+                <a href="/ccna/vlan/">Explorar sección →</a>
+            </p>
+        </div>
+
     </div>
 </section>
 

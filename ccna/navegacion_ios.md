@@ -160,7 +160,7 @@ Si ejecutas un comando que no indentifica la IOS saltará esto:
 
 ![](/ccna/navegacion_ios/captura2.png)
 
-Para arreglar esto presionas las teclas **ctrl+shift+6** y dentro de la configuración global ejectuas el comando:
+Para arreglarlo, presionas las teclas **ctrl+shift+6** y dentro de la configuración global ejectuas el comando:
 
 ````bash
 no ip domain-lookpup
@@ -183,7 +183,7 @@ conf[TAB] pasa a autocompletarse como configure
 
 ### Abreviaciones válidas
 
-Siempre que no haya ambigüedad pueder abreviar, por ejemplo:
+Siempre que no haya ambigüedad puedes abreviar, por ejemplo:
 
 ````bash
 conf t
@@ -213,7 +213,7 @@ Esto se utilizar para cuando tengas que hacer un **reload** de un dispositivo no
 
 ---
 
-## Comandos básicos de verificación recomendados
+## Comandos show básicos para verificar la configuración
 
 ````bash
 show running-config

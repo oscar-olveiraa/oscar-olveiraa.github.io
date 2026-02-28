@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Configuración básica de dispositivos
+title: Solucionar problemas
 ---
 
 # Solucionar problemas en dispositivos

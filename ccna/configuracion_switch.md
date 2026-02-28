@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Navegación en Cisco IOS
+title: Configuración de un switch
 ---
 
 # Configuración de un switch

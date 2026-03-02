@@ -85,4 +85,8 @@ no switchport
 De esta forma un puerto de Capa 2, se convierte en una interfaz de Capa 3. A continuación, la interfaz se puede configurar con una configuración IPv4 para conectarse a un enrutador u otro switch de capa 3.
 
 
+## Comandos verificación
 
+Tal y como se explica en la guía [VLAN](/ccna/vlan/), dentro del punto de comandos de verificación.
+
+También importante mirar siempre de hacer pruebas de conectividad (ping,traceroute...) o mirar el archivo de ejecución (running-config).

@@ -77,7 +77,8 @@ Para activarlo hay varios modos:
 2)show vlan {idvlan-id}
 3)show vlan {namevlan-name}
 4)show interfaces [interface-id] switchport
-5)show dtp interface [interface-id]
+5)show interface trunk
+6)show dtp interface [interface-id]
 ````
 
 1)Muestra el nombre, el estado y sus puertos de la VLAN, una VLAN por línea.
@@ -86,4 +87,6 @@ Para activarlo hay varios modos:
 
 4)Muestra las VLAN de datos y voz asignadas a la interfaz. También características del puerto si es troncal.
 
-5)Para determinar el modo DTP actual. Se recomienda que las interfaces estean o modo "access" o modo "trunk" y desactivar DTP.
+5)Muestra la configuración del enlace troncal, por ejemplo la VLAN nativa, o las VLAN permitidas.
+
+6)Para determinar el modo DTP actual. Se recomienda que las interfaces estean o modo "access" o modo "trunk" y desactivar DTP.

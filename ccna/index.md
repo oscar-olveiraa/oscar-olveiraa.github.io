@@ -94,7 +94,25 @@ permalink: /ccna/
             <p>
                 Pasos para crear y configurar Inte-VLAN routing.
                 <br>
-                <a href="/ccna/vlan/">Explorar sección →</a>
+                <a href="/ccna/inter_vlan/">Explorar sección →</a>
+            </p>
+        </div>
+
+        div>
+            <span>Etherchannel</span>
+            <p>
+                Pasos para crear y configurar Etherchannel.
+                <br>
+                <a href="/ccna/etherchannel/">Explorar sección →</a>
+            </p>
+        </div>
+
+        div>
+            <span>DHCP</span>
+            <p>
+                Pasos para crear y configurar DHCP tanto en servidores como en router.
+                <br>
+                <a href="/ccna/dhcp/">Explorar sección →</a>
             </p>
         </div>
 

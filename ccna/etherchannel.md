@@ -5,7 +5,7 @@ title: EtherChannel
 
 # EtherChannel
 
-Función principal: agrupar puertos de un swtich para crear redundancia y balanceo de carga. Hay dos protocolos principales, PAgP (propiedad de Cisco) y LACP.
+Función principal: agrupar puertos de un switch para crear redundancia y balanceo de carga. Hay dos protocolos principales, PAgP (propiedad de Cisco) y LACP.
 
 Cada EtherChannel tiene una interfaz de canal de puertos lógica. La configuración aplicada a la interfaz de canal de puertos afecta a todas las interfaces físicas que se asignan a esa interfaz
 
@@ -29,7 +29,7 @@ Dentro de la configuración de rango de interfaces:
 channel-group {number} mode {auto|active|desirable|on|passive}
 ````
 
-El numéro indentifica el canal de puertos (tiene que ser entre 1 y 6). El modo puede ser:
+El número identifica el canal de puertos (tiene que ser entre 1 y 6). El modo puede ser:
 
 ◇ On -> este modo obliga a la interfaz a proporcionar un canal sin PAgP o LACP. Las interfaces configuradas en el modo encendido no intercambian paquetes PAgP O LACP.
 
@@ -50,7 +50,7 @@ interface port-channel {number}
 ````
 El número tiene que coincidir con la interfaz de canal de puertos creada. 
 
-Una vez accedido a la interfaz la configurariamos como si fuera una sola (hacerlo troncal, asignar VLAN...)
+Una vez accedido a la interfaz la configuraríamos como si fuera una sola (hacerlo troncal, asignar VLAN...)
 
 
 ## Verificación EtherChannel

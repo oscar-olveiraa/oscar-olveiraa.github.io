@@ -98,7 +98,7 @@ permalink: /ccna/
             </p>
         </div>
 
-        div>
+        <div>
             <span>Etherchannel</span>
             <p>
                 Pasos para crear y configurar Etherchannel.
@@ -107,10 +107,10 @@ permalink: /ccna/
             </p>
         </div>
 
-        div>
-            <span>DHCP</span>
+        <div>
+            <span>DHCPv4</span>
             <p>
-                Pasos para crear y configurar DHCP tanto en servidores como en router.
+                Pasos para crear y configurar DHCPv4 en router como servidor.
                 <br>
                 <a href="/ccna/dhcp/">Explorar sección →</a>
             </p>

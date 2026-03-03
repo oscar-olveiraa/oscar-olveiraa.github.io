@@ -215,6 +215,8 @@ Esto se utilizar para cuando tengas que hacer un **reload** de un dispositivo no
 
 ## Comandos show básicos para verificar la configuración
 
+🚨 IMPORTANTE: Todos los comandos **show** se ejecutan como modo privilegiado o modo usuario.
+
 ````bash
 show running-config
 show ip interface brief

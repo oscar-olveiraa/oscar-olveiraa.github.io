@@ -39,9 +39,9 @@ Dentro del modo de configuración de la subinterfaz ejecutamos lo siguiente:
 
 ![](/ccna/inter_vlan/captura1.png)
 
-La IP que se asigna a la subinterfaz es el gateway del host de esa VLAN. 
+La IP que se asigna a la subinterfaz es el gateway de los hosts que pertenecen a esa VLAN. 
 
-El comando **encapsulation dot1q vlan_id [native]** , el vlan_id es el nº de VLAN que se creó en el switch y el parámetro *native* se usa para especificar la VLAN que configuramos como nativa en el Switch.
+El comando **encapsulation dot1q {vlan_id} [native]** , el *vlan_id* es el nº de VLAN que se creó en el switch y el parámetro *native* se usa para especificar la VLAN que configuramos como nativa en el Switch.
 
 🚨 IMPORTANTE: activar la interfaz física, en este caso la interfaz **gigabitEthernet 0/0/0** con el comando **no shutdown**.
 

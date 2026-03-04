@@ -116,6 +116,24 @@ permalink: /ccna/
             </p>
         </div>
 
+        <div>
+            <span>DHCPv6</span>
+            <p>
+                Pasos para crear y configurar DHCPv6 en router.
+                <br>
+                <a href="/ccna/dhcp/">Explorar sección →</a>
+            </p>
+        </div>
+
+        <div>
+            <span>FHRP</span>
+            <p>
+                Pasos para crear y configurar FHRP en router.
+                <br>
+                <a href="/ccna/dhcp/">Explorar sección →</a>
+            </p>
+        </div>
+
     </div>
 </section>
 

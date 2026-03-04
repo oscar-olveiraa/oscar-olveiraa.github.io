@@ -65,7 +65,7 @@ permalink: /ccna/
         <div>
             <span>Configuración de un switch</span>
             <p>
-                Pasos para configurar un switch con parámetros inicales.
+                Pasos para configurar un switch con parámetros inicales y de seguridad.
                 <br>
                 <a href="/ccna/configuracion_switch/">Explorar sección →</a>
             </p>
@@ -121,7 +121,7 @@ permalink: /ccna/
             <p>
                 Pasos para crear y configurar DHCPv6 en router.
                 <br>
-                <a href="/ccna/dhcp/">Explorar sección →</a>
+                <a href="/ccna/dhcpv6/">Explorar sección →</a>
             </p>
         </div>
 
@@ -130,7 +130,7 @@ permalink: /ccna/
             <p>
                 Pasos para crear y configurar FHRP en router.
                 <br>
-                <a href="/ccna/dhcp/">Explorar sección →</a>
+                <a href="/ccna/fhrp/">Explorar sección →</a>
             </p>
         </div>
 

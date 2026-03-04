@@ -74,8 +74,8 @@ Para activarlo hay varios modos:
 
 ````
 1)show vlan brief
-2)show vlan {idvlan-id}
-3)show vlan {namevlan-name}
+2)show vlan {vlan-id}
+3)show vlan {vlan-name}
 4)show interfaces [interface-id] switchport
 5)show interface trunk
 6)show dtp interface [interface-id]

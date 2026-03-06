@@ -134,6 +134,24 @@ permalink: /ccna/
             </p>
         </div>
 
+        <div>
+            <span>Enrutamiento estático</span>
+            <p>
+                Pasos para crear y configurar enrutamiento IP estático en router.
+                <br>
+                <a href="/ccna/enrutamento_estatico/">Explorar sección →</a>
+            </p>
+        </div>
+
+        <div>
+            <span>OSPF</span>
+            <p>
+                Pasos para crear y configurar OSPF en un router.
+                <br>
+                <a href="/ccna/ospf/">Explorar sección →</a>
+            </p>
+        </div>
+
     </div>
 </section>
 

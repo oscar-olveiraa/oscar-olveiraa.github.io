@@ -101,7 +101,7 @@ Se habilita con el comando **switchport port-security** dentro de la configuraci
 
 ◇ Cuando se activa el Port-Security el dispositivo conectado al puerto se asegura automáticamente pero no se agrega a la configuración en ejecución pero si se reinicia el switch se pierde. Se puede configurar el switch para aprender dinámicamente la dirección MAC y "adherirla" a la configuración en ejecución mediante el comando **switchport port-security mac-address sticky [mac-address]**
 
-◇ Vencimiento de las direcciones estáticas y dinámicas en el puerto -> **switchport port-security aging {static | time {time} | type {absolute | inactivity}}
+◇ Vencimiento de las direcciones estáticas y dinámicas en el puerto -> **switchport port-security aging {static | time {time} | type {absolute | inactivity}}**
 
 Parámetro *type*:
 

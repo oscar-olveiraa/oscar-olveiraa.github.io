@@ -37,7 +37,7 @@ Para proteger el modo EXEC del usuario ejectuamos los siguientes comandos:
 ![](/ccna/configuracion_basica/captura4.png)
 
 
-Para protefer el modo EXEC privilegaido ejecutamos el siguiente comando en el modo configuración global:
+Para proteger el modo EXEC privilegiado ejecutamos el siguiente comando en el modo configuración global:
 
  ````bash
  enable secret {contraseña}

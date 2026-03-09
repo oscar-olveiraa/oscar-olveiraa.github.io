@@ -100,7 +100,7 @@ ip access-group {n-access-list}{access-list-name} {in|out}
 
 ◇ Realizar las ediciones o cambios necesarios.
 
-◇ Eliminar la ACL configurada previamente en el router (no access-list {n-access-list | access-list-name})
+◇ Eliminar la ACL configurada previamente en el router (no access-list {n-access-list|access-list-name})
 
 ◇ Copiar y pegar la ACL editada de nuevo en el router.
 

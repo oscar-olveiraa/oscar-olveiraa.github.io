@@ -31,6 +31,7 @@ no shutdown
 9)show startup-config
 10)show version
 11)show history
+12)show arp
 ````
 
 1-2)El resultado muestra todas las interfaces, sus direcciones IPv4/IPv6 y el estado actual de forma abreviada.
@@ -48,3 +49,5 @@ no shutdown
 10)Muestra el estado del hardware y el software del sistema.
 
 11)Muestra las últimas 1p líneas de comandos en el búfer. Se puede cambiar el tamaño con el comando **terminal history size {number}**
+
+12)Muestra el contenido de la tabla ARP.

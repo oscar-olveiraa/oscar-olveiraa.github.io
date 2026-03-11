@@ -161,6 +161,24 @@ permalink: /ccna/
             </p>
         </div>
 
+        <div>
+            <span>NAT</span>
+            <p>
+                Pasos para crear y configurar NAT en un router.
+                <br>
+                <a href="/ccna/nat/">Explorar sección →</a>
+            </p>
+        </div>
+
+        <div>
+            <span>Administración de redes</span>
+            <p>
+                Pasos para administrar dispositivos de forma básica.
+                <br>
+                <a href="/ccna/acl/">Explorar sección →</a>
+            </p>
+        </div>
+
     </div>
 </section>
 

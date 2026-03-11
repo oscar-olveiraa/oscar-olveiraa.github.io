@@ -45,6 +45,8 @@ Se puede usar el comando **mdix auto** en los switches más modernos para detect
 8)show ipv6 interface [interface-id]
 9)show mac-address-table
 10)show mac address-table
+11)show port
+12)show arp
 ````
 
 1)Muestra el estado y la configuración de la interfaz. Muestra también errores de entrada, colisiones, CRC...
@@ -59,9 +61,14 @@ Se puede usar el comando **mdix auto** en los switches más modernos para detect
 
 6)Muestra las últimas 1p líneas de comandos en el búfer. Se puede cambiar el tamaño con el comando **terminal history size {number}**
 
-7)Muestra información de IP de una interfaz.
+7-8)Muestra información de IP de una interfaz.
 
-8-9)Muestra la tabla de direcciones MAC.
+9-10)Muestra la tabla de direcciones MAC.
+
+11)Muestra el estado de los puertos.
+
+12)Muestra el contenido de la tabla ARP.
+
 
 
 
@@ -71,11 +78,11 @@ Con estos comandos evitaremos ataques ARP, STP, DHCP...
 
 ### Desactivar CDP
 
-Para deshabilitar CDP globalmente en un dispositivo, usr el comando **no cdp run**.
+Para deshabilitar CDP globalmente en un dispositivo, usar el comando **no cdp run**.
 
 Para habilitar CDP globalmente, usar el comando **cdp run**.
 
-Para deshabilitar CDP en un puerto, usr el comando de configuración de interfaz **no cdp enable**. 
+Para deshabilitar CDP en un puerto, usar el comando de configuración de interfaz **no cdp enable**. 
 
 Para habilitar CDP en un puerto, usar el comando de configuración de interfaz **cdp enable**.
 

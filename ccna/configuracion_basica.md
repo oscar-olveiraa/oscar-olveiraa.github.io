@@ -78,6 +78,8 @@ banner motd #Only authorized people#
 ````
 🚨 IMPORTANTE: esto es importante para advertir a personal no autorizado al intentar acceder, además el símbolo '#' se usa como carácter delimitador.
 
+Usar el comando **service timestamps log date time para forzar que los eventos registrados muestren la fecha y la hora. (para syslog)
+
 ## Comandos para prueba de conectividad
 
 Desde el modo de usuario o privilegiado podemos comprobar la conexión a otros dispositivos con los siguientes comandos:

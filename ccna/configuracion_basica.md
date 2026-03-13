@@ -32,7 +32,7 @@ Dando como resultado lo siguiente:
 
 ## Configurar contraseñas
 
-Para proteger el modo EXEC del usuario ejectuamos los siguientes comandos:
+Para proteger el modo EXEC del usuario ejecutamos los siguientes comandos:
 
 ![](/ccna/configuracion_basica/captura4.png)
 
@@ -43,6 +43,7 @@ Para proteger el modo EXEC privilegiado ejecutamos el siguiente comando en el mo
  enable secret {contraseña}
  ````
 
+🚨 IMPORTANTE: destacar que cuando usamos **secret** en vez de **password**, las contraseñas ya se encriptan solas.
 
 Para proteger las líneas para el acceso remoto ejecutamos los siguientes comandos. Importante destacar que en este proceso se activa tambien SSH ya que Telnet no es un protocolo seguro:
 
@@ -69,14 +70,19 @@ Para evitar ataques de fuerza bruta estableces un máximo de intentos en x segun
 login block-for {time} attempts {n-attempts} within {time}
 ````
 
-🚨 IMPORTANTE: destacar que cuando usamos **secret** en vez de **password**, las contraseñas ya se encriptan solas.
+Ejemplo:
+
+````
+login block-for 120 attempts 3 within 60
+````
+Esto significa: Bloquea logins durante 120 segundos, si hay 3 intentos fallidos, en un período de 60 segundos
 
 Para mostrar un mensaje banner, ejecutamos el siguiente comando en el modo de configuración global:
 
 ````bash
 banner motd #Only authorized people#
 ````
-🚨 IMPORTANTE: esto es importante para advertir a personal no autorizado al intentar acceder, además el símbolo '#' se usa como carácter delimitador.
+🚨 IMPORTANTE: esto es importante para advertir a personal no autorizado al intentar acceder, además el símbolo '#' se usa como carácter delimitador, no aparece en el mensaje.
 
 Usar el comando **service timestamps log date time para forzar que los eventos registrados muestren la fecha y la hora. (para syslog)
 

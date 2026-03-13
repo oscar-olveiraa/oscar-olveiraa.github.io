@@ -175,7 +175,7 @@ permalink: /ccna/
             <p>
                 Pasos para administrar dispositivos de forma básica.
                 <br>
-                <a href="/ccna/acl/">Explorar sección →</a>
+                <a href="/ccna/admin_redes/">Explorar sección →</a>
             </p>
         </div>
 

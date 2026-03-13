@@ -29,11 +29,11 @@ Prompt -> *Router >*
 
 ◇ Ejemplos:
 
-    ````bash
-    show version
-    show ip interface brief
-    ping 192.168.1.1
-    ````
+ ````bash
+show version
+show ip interface brief
+ping 192.168.1.1
+````
 
 ---
 
@@ -101,9 +101,11 @@ Prompt -> *Router(config-if)#*
 También se puede acceder a un rango de interfaces ya que nos puede interesar para ahorrar tiempo si la configuración es igual para un grupo de interfaces:
 
 ````bash
-interface range {interface_name}
+interface range {interface_range}
 ````
+Por ejemplo:
 
+![](/ccna/navegacion_ios/captura3.png)
 
 ---
 
@@ -149,7 +151,7 @@ IOS es jerárquico. Para moverse entre modos:
 
 ### Ayuda contextual
 
-Usando el signo de interrogación podemos ver la lista de comandos que podemos ejectuar.
+Usando el signo de interrogación podemos ver la lista de comandos que podemos ejecutar.
 
 
 Ejemplo:
@@ -163,7 +165,7 @@ Si ejecutas un comando que no indentifica la IOS saltará esto:
 Para arreglarlo, presionas las teclas **ctrl+shift+6** y dentro de la configuración global ejectuas el comando:
 
 ````bash
-no ip domain-lookpup
+no ip domain-lookup
 ````
 
 
@@ -209,13 +211,13 @@ Forma abreviada:
 wr
 ````
 
-Esto se utilizar para cuando tengas que hacer un **reload** de un dispositivo no se pierdan los cambios ya que se guardan en la NVRAM, una memoria no volátil.
+Esto se utiliza para cuando tengas que hacer un **reload** de un dispositivo no se pierdan los cambios ya que se guardan en la NVRAM, una memoria no volátil.
 
 ---
 
 ## Comandos show básicos para verificar la configuración
 
-🚨 IMPORTANTE: Todos los comandos **show** se ejecutan como modo privilegiado o modo usuario.
+🚨 IMPORTANTE: Todos los comandos **show** se ejecutan como modo privilegiado y algunos en modo usuario, pero no todos.
 
 ````bash
 show running-config
@@ -224,6 +226,14 @@ show interfaces
 ping
 traceroute
 ````
+
+Desde el modo de configuración global tambien se puede ejecutar comandos show:
+
+````
+do show ip interface brief
+````
+
+Esto evita salir del modo configuración.
 
 ---
 
@@ -241,7 +251,7 @@ Ejemplos de uso:
 
 ````
 show ip route | exclude static
-show ip running-config | section interface
+show running-config | section interface
 ````
 
 
@@ -255,17 +265,3 @@ show ip running-config | section interface
 ◇ Guardar la configuración tras cambios relevantes
 
 ---
-
-## Resumen
-
-Cisco IOS funciona mediante una estructura jerárquica de modos:
-
-1.User EXEC (`>`)
-
-2.Privileged EXEC (`#`)
-
-3.Global Configuration
-
-4.Submodos específicos (interface, line, router…)
-
-Dominar la navegación es el primer paso para administrar dispositivos de red correctamente.

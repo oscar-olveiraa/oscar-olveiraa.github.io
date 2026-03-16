@@ -11,7 +11,7 @@ Hay varias formas de conseguir direccionamiento en IPv6: SLAAC, DHCPv6 sin estad
 
 El router envía paquetes RA proporcionando direcciones y otra información de configuración para que los hosts configuren automáticamente su dirección IPv6 en función de la información del RA.
 
-Para que el router envíe esos paquetes primero tiene que escuchar en el grupo multicast ff02::2. Cuando recibe un RS de un host, contesta a ese host con un RA. Para que se una a ese grupo multicast se tiene que ejecutar el siguiente comando en el modo de configuración global:
+Para que el router envíe esos paquetes primero tiene que pertenecer en el grupo multicast ff02::2. Cuando recibe un RS de un host, contesta a ese host con un RA. Para que se una a ese grupo multicast se tiene que ejecutar el siguiente comando en el modo de configuración global:
 
 ````
 ipv6 unicast-routing
@@ -174,9 +174,9 @@ ipv6 address dhcp
 
 1)Verificar el nombre del pool de DHCPv6 y sus parámetros. El comando también identifica el número de clientes activos.
 
-2)Mostrar la dirección local del vínculo IPv6 del cliente y la dirección de unidifusión global asignada por el servidor.
+2)Mostrar la dirección local del vínculo IPv6 del cliente y la dirección de unicast global asignada por el servidor.
 
-🚨 IMPORTANTE: La información del comando 2 la mantiene un servidor de DHCPv6 stateful,un servidor DHCPv6 sin estado no mantendría esta información.
+🚨 IMPORTANTE: La información del comando 2 la mantiene un servidor de DHCPv6 stateful, un servidor DHCPv6 sin estado no mantendría esta información.
 
 ## Configurar agente de retransmisión
 

@@ -62,13 +62,13 @@ Comandos de verificación -> **show ntp associations** y **show ntp status**
 
 ◇ Para crear copias de seguridad con un servidor remoto:
 
-1) Introducir el comando en el modo privilegiado **copy running-config tftp**
+1) Ejecutar en modo privilegiado **copy running-config tftp**
 
 2) Introducir la dirección IP del host en el cual se almacenará el archivo de configuración.
 
 3) Introducir el nombre que se asignará al archivo de configuración.
 
-4) Presione 'Enter' para confirmar cada elección.
+4) Presionar 'Enter' para confirmar cada elección.
 
 ![](/ccna/admin_redes/captura4.png)
 
@@ -83,7 +83,7 @@ Comandos de verificación -> **show ntp associations** y **show ntp status**
 4) Presionar 'Enter' para confirmar cada elección.
 
 
-También se puede crear copias y restaurarlas con un pendrive -> **copy run usbflash0:/**
+También se puede crear copias y restaurarlas con un pendrive -> **copy running-config usbflash0:/**
 
 
 ## Recuperación de contraseñas
@@ -111,8 +111,8 @@ Para copiar una imagen de un servidor a tu dispositivo (sea porque la imagen act
 
 1)Verificar la cantidad de flash libre. Con el comando **show flash:** comparar el espacio disponible en la memoria flash con el tamaño del nuevo archivo de imagen.
 
-2)Copiar la imagen IOS del servidor al dispositivo de red. Pedirá la dirección IP del servidor y el nombre de la imagen a copiar en el dispositivo -> **copy tftp flash**
+2)Copiar la imagen IOS del servidor al dispositivo de red. Pedirá la dirección IP del servidor y el nombre de la imagen a copiar en el dispositivo -> **copy tftp: flash:**
 
-3)Arrancar la nuenva imagen. Dentro de la configuración global -> **boot system flash:{ios_name}
+3)Arrancar la nueva imagen. Dentro de la configuración global -> **boot system flash:{ios_name}**
 
 4)Guardar la configuración -> **wr**

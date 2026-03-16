@@ -5,7 +5,7 @@ title: ACL
 
 # ACL (Access Control List)
 
-🚨 IMPORTANTE: todos las ACL que creamos (sean estándar o extendida), tienen un "deny any" implícito que hace que deniege todo el tráfico si no coincide con una ACE.   
+🚨 IMPORTANTE: todas las ACL que creamos (sean estándar o extendida), tienen un "deny any" implícito que hace que deniegue todo el tráfico si no coincide con una ACE.   
 
 ## ACL estándar
 
@@ -14,10 +14,10 @@ title: ACL
 ◇ Sintaxis dentro de la configuración global para ACL numerada (1-99):
 
 ````
-access-list {n-access-list} {deny | permit | remark {text}} source {source-wildcard} [log] 
+access-list {number} {permit | deny | remark {text}} {source} {wildcard-mask} [log]
 ````
 
-El parámetro remark (opcional) se usa para poner un texto para fines de documentación. El parámetro log (opcional)gGenera y envía un mensaje informativo cuando el ACE (Access Control Entry) coincide.
+El parámetro remark (opcional) se usa para poner un texto para fines de documentación. El parámetro log (opcional) genera y envía un mensaje informativo cuando el ACE (Access Control Entry) coincide.
 
 ◇ Sintaxis dentro de la configuración global para ACL nombrada:
 
@@ -32,7 +32,7 @@ Dentro del modo de configuración de la ACL tenemos los siguientes comandos (usa
 ◇ Aplicar la ACL a la interfaz, dentro de la configuración de la interfaz:
 
 ````
-ip access-group {n-access-list}{access-list-name} {in|out}
+ip access-group {n-access-list | access-list-name} {in|out}
 ````
 
 ## Asegurar puertos de acceso remoto (VTY)
@@ -72,7 +72,7 @@ Si usamos UDP:
 
 ![](/ccna/acl/captura5.png)
 
-Si usamos outro tipo de protocolos, los arguementos cambian, para verlos concretamente usar "?" para desplegar los posibles parámetros que tiene.
+Si usamos otro tipo de protocolos, los argumentos cambian, para verlos concretamente usar "?" para desplegar los posibles parámetros que tiene.
 
 
 ◇ Sintaxis dentro de la configuración global para ACL nombrada:
@@ -117,7 +117,7 @@ El parámetro *n-sequence* es el número del ACE que vamos a eliminar, ese núme
 También se puede modificar una ACL, dentro de la configuración de la ACL:
 
 ````
-{n-sequence} {deny | permit | remak} ...
+{n-sequence} {deny | permit | remark} ...
 ````
 
 ## Verificación
@@ -126,8 +126,11 @@ También se puede modificar una ACL, dentro de la configuración de la ACL:
 ````
 1)show access-list
 2)show ip interface {interface-id} | include access list
+3)show running-config | section access-list
 ````
 
 1)Revisar el ACL en la configuración. También muestra las estadísticas de cada sentencia que se ha coincidente. Para borrar las estadísticas, ejecutar comando en el modo privilegiado **clear access-list counters**
 
 2)Verificar que el ACL está aplicado a la interfaz.
+
+3)Mostrar todas las ACL configuradas.

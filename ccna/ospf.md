@@ -9,13 +9,13 @@ title: OSPF
 
 Router-ID se puede asignar de la siguiente forma ordenada:
 
-1)Router-ID
+1)Router-ID configurado manualmente
 
-2)Loopback
+2)IP más alta de loopback
 
-3)Interfaz router
+3)IP más alta de interfaz física activa
 
-Es ordenada ya que si se especifica Router-ID d forma manual, este será asignado, si no se espcifica Router-ID pero si interfaz de Loopback, el Router-ID pasa a ser la IP de loopback.
+Es ordenada ya que si se especifica Router-ID de forma manual, este será asignado, si no se especifica Router-ID pero si interfaz de Loopback, el Router-ID pasa a ser la IP de loopback.
 
 Para especificar de la forma 1):
 
@@ -26,7 +26,7 @@ Para especificar de la forma 2):
 
 ![](/ccna/ospf/captura3.png)
 
-La forma 3) eligiría la IP más alta de las interfaces del router
+La forma 3) elegiría la IP más alta de las interfaces del router
 
 Quedaría de esta forma es esquema de selección de Router-ID:
 
@@ -83,7 +83,8 @@ Para comprobarlo -> **show ip ospf interface {interface-id}**
 
 Para comprobar la adyacencia (ver los vecinos) -> show ip ospf neighbor
 
-DR y BDR se asignan según el Router-ID de cada router. Se pude especificar una prioridad, predeterminado es 1 y puede ser de 0 a 255, de esta forma el que tenga prioridad más alta es siempre DR. Dentro de la linea de configuración de interfaz:
+
+DR y BDR se eligen primero según la prioridad OSPF de la interfaz. Si hay empate, se usa el Router-ID. La prioridad de forma predeterminada es 1 y puede ser de 0 a 255, de esta forma el que tenga prioridad más alta es siempre DR. Dentro de la linea de configuración de interfaz:
 
 ````
 ip ospf priority {n-priority}
@@ -97,7 +98,7 @@ El ancho de banda de referencia predeterminado (100,000,000); por lo tanto, la f
 
 Costo = 100.000.000 bps/ancho de banda de la interfaz en bps
 
-Para ajustar el ancho de banda de referencia de forma global, dentro de la configuración de ospf (router ospf {process-id}) -> **auto-costreference-bandwidth {Mbps}**
+Para ajustar el ancho de banda de referencia de forma global, dentro de la configuración de ospf (router ospf {process-id}) -> **auto-cost reference-bandwidth {Mbps}**
 
 🚨 IMPORTANTE: si se ajusta el ancho de banda de referencia, tiene que ser para todos los routers igual.
 
@@ -129,17 +130,18 @@ Para verificar -> **show ip route| begin Gateway**
 2)show ip protocols
 3)show ip ospf
 4)show ip ospf interface {interface-id}
+5)show ip route [ospf]
 ````
 
-1)Para verificar que el router haya formado una adyacencia con los routers vecinos
+1)Para verificar que el router haya formado una adyacencia con los routers vecinos.
 
-2)Verificar información vital de configuración de OSPF, como se muestra en el ejemplo del comando. Esto incluye la ID del proceso OSPFv2, el router ID, las interfaces configuradas explícitamente para anunciar las rutas OSPF, los vecinos desde los que el router recibe actualizaciones y la distancia administrativa predeterminada, que es 110 para OSPF
+2)Verificar información vital de configuración de OSPF, como se muestra en el ejemplo del comando. Esto incluye la ID del proceso OSPFv2, el router ID, las interfaces configuradas explícitamente para anunciar las rutas OSPF, los vecinos desde los que el router recibe actualizaciones y la distancia administrativa predeterminada, que es 110 para OSPF.
 
-3)Examinar la ID del proceso OSPFv2 y el router ID. También muestra información de área OSPFv2 y la última vez que se ejecuto el algoritmo SPF
+3)Examinar la ID del proceso OSPFv2 y el router ID. También muestra información de área OSPFv2 y la última vez que se ejecutó el algoritmo SPF.
 
-4)Muestra el ID de proceso, el router ID local, el tipo de red, el costo OSPF, la información de DR y BDR en vínculos de acceso múltiple (no se muestra) y los vecinos adyacentes
+4)Muestra el ID de proceso, el router ID local, el tipo de red, el costo OSPF, la información de DR y BDR en vínculos de acceso múltiple (no se muestra) y los vecinos adyacentes.
 
-
+5)Muestra la tabla de enrutamiento. Si ponemos el parámetro *ospf* solamente muestra las aprendidas OSPF.
 
 
 

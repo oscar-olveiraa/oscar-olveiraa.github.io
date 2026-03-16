@@ -29,7 +29,7 @@ Esta interfaz se configura en el puerto que une el switch con el router que hace
 
 ### 5º) Configurar subinterfaces en el router
 
-Primero creamos las subinterfaces en el modo configuración global, por ejemplo:
+Desde el modo de configuración global se accede al modo de configuración de la subinterfaz con:
 
 ````
 interface g0/0/0.10
@@ -41,7 +41,10 @@ Dentro del modo de configuración de la subinterfaz ejecutamos lo siguiente:
 
 La IP que se asigna a la subinterfaz es el gateway de los hosts que pertenecen a esa VLAN. 
 
-El comando **encapsulation dot1q {vlan_id} [native]** , el *vlan_id* es el nº de VLAN que se creó en el switch y el parámetro *native* se usa para especificar la VLAN que configuramos como nativa en el Switch.
+El comando **encapsulation dot1q {vlan_id} [native]** , el *vlan_id* es el nº de VLAN que se creó en el switch y el parámetro *native* se usa para especificar la VLAN que configuramos como nativa en el Switch. 
+
+
+🚨IMPORTANTE: es imprescindible que el puerto del switch que conecta con el router sea trunk.
 
 🚨 IMPORTANTE: activar la interfaz física, en este caso la interfaz **gigabitEthernet 0/0/0** con el comando **no shutdown**.
 
@@ -89,4 +92,4 @@ De esta forma un puerto de Capa 2, se convierte en una interfaz de Capa 3. A con
 
 Tal y como se explica en la guía [VLAN](/ccna/vlan/), dentro del punto de comandos de verificación.
 
-También importante mirar siempre de hacer pruebas de conectividad (ping,traceroute...) o mirar el archivo de ejecución (running-config).
+También importante realizar siempre pruebas de conectividad (ping,traceroute...) o mirar el archivo de ejecución (running-config).

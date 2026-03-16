@@ -45,7 +45,7 @@ Para proteger el modo EXEC privilegiado ejecutamos el siguiente comando en el mo
 
 🚨 IMPORTANTE: destacar que cuando usamos **secret** en vez de **password**, las contraseñas ya se encriptan solas.
 
-Para proteger las líneas para el acceso remoto ejecutamos los siguientes comandos. Importante destacar que en este proceso se activa tambien SSH ya que Telnet no es un protocolo seguro:
+Para proteger las líneas para el acceso remoto ejecutamos los siguientes comandos. Hay que destacar que en este proceso se activa tambien SSH ya que Telnet no es un protocolo seguro:
 
 ![](/ccna/configuracion_basica/captura5.png)
 
@@ -84,7 +84,7 @@ banner motd #Only authorized people#
 ````
 🚨 IMPORTANTE: esto es importante para advertir a personal no autorizado al intentar acceder, además el símbolo '#' se usa como carácter delimitador, no aparece en el mensaje.
 
-Usar el comando **service timestamps log date time para forzar que los eventos registrados muestren la fecha y la hora. (para syslog)
+Usar el comando **service timestamps log date time** para forzar que los eventos registrados muestren la fecha y la hora. (para syslog)
 
 ## Comandos para prueba de conectividad
 

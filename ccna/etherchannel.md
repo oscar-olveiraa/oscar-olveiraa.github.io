@@ -9,7 +9,7 @@ Función principal: agrupar puertos de un switch para crear redundancia y balanc
 
 Cada EtherChannel tiene una interfaz de canal de puertos lógica. La configuración aplicada a la interfaz de canal de puertos afecta a todas las interfaces físicas que se asignan a esa interfaz
 
-🚨IMPORTANTE: La configuración de los puertos individuales que forman parte del grupo EtherChannel debe ser coherente en ambos dispositivos (misma velocidad y duplex, si unos es troncal el otro tiene que ser también troncal, mismo tipo de interfaz, mismo rango de VLAN asignadas en ambas partes...). 
+🚨IMPORTANTE: La configuración de los puertos individuales que forman parte del grupo EtherChannel debe ser coherente en ambos dispositivos (misma velocidad y duplex, si uno es troncal el otro tiene que ser también troncal, mismo tipo de interfaz, mismo rango de VLAN asignadas en ambas partes...). 
 
 ## Configuración EtherChannel
 
@@ -29,9 +29,9 @@ Dentro de la configuración de rango de interfaces:
 channel-group {number} mode {auto|active|desirable|on|passive}
 ````
 
-El número identifica el canal de puertos (tiene que ser entre 1 y 6). El modo puede ser:
+El parámetro *number* identifica el canal de puertos. El modo puede ser:
 
-◇ On -> este modo obliga a la interfaz a proporcionar un canal sin PAgP o LACP. Las interfaces configuradas en el modo encendido no intercambian paquetes PAgP O LACP.
+◇ On -> este modo obliga a la interfaz a proporcionar un canal sin PAgP o LACP. Las interfaces configuradas en el modo encendido no intercambian paquetes PAgP o LACP.
 
 ◇ Desirable -> este modo PAgP coloca una interfaz en un estado de negociación activa en el que la interfaz inicia negociaciones con otras interfaces al enviar paquetes PAgP.
 
@@ -40,6 +40,10 @@ El número identifica el canal de puertos (tiene que ser entre 1 y 6). El modo p
 ◇ Active -> este modo de LACP coloca un puerto en estado de negociación activa. En este estado, el puerto inicia negociaciones con otros puertos mediante el envío de paquetes LACP.
  
 ◇ Passive -> este modo de LACP coloca un puerto en estado de negociación pasiva. En este estado, el puerto responde a los paquetes LACP que recibe, pero no inicia la negociación de paquetes LACP.
+
+Un resumen de las combinaciones posibles para cada protocolo:
+
+![](/ccna/etherchannel/captura2.png)
 
 ### 3º) Acceder a la interfaz de canal de puertos
 
@@ -53,6 +57,15 @@ El número tiene que coincidir con la interfaz de canal de puertos creada.
 Una vez accedido a la interfaz la configuraríamos como si fuera una sola (hacerlo troncal, asignar VLAN...)
 
 
+## Desactivar/Eliminar Etherchannel
+
+Dentro del rango de interfaces:
+
+````
+no channel-group {number}
+````
+
+
 ## Verificación EtherChannel
 
 ````
@@ -64,7 +77,9 @@ Una vez accedido a la interfaz la configuraríamos como si fuera una sola (hacer
 
 1)Muestra el estado general de la interfaz de canal de puertos
 
-2)Muestra una línea de información por canal de puerto
+2)Muestra una línea de información por canal de puerto. El significado del estado etherchannel:
+
+![](/ccna/etherchannel/captura1.png)
 
 3)Muestra la información sobre una interfaz de canal de puertos específica
 

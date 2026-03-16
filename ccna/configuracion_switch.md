@@ -13,7 +13,7 @@ Para acceder a un switch de forma remota se configura una SVI (Switch Virtual In
 
 Importante destacar que el número de VLAN puede ser cualquiera y evitar que sea la 1 ya que es la predeterminada y es puede causar un fallo grande de seguridad. La dirección IP puede ser IPv6. 
 
-Al acceder de forma remota, el switch tiene que tener una puerta de enlace predeterminada para el tráfico que genera. La puerta de enlace predeterminada normalmente es la interfaz del router que conecta a la LAN de ese switch. Para configurar una puerta de enlace en un switch, en el modo de configuración global se ejecuta el siguiente comando:
+Al acceder de forma remota, el switch tiene que tener una puerta de enlace predeterminada para el tráfico que genera ya que un switch no sabe enrutar. La puerta de enlace predeterminada normalmente es la interfaz del router que conecta a la LAN de ese switch. Para configurar una puerta de enlace en un switch, en el modo de configuración global se ejecuta el siguiente comando:
 
 ````
 ip default-gateway {ip-address}
@@ -23,7 +23,7 @@ ip default-gateway {ip-address}
 
 🚨 IMPORTANTE: ambos extremos tienen que tener la misma configuración de puerto (velocidad, duplex y tipo de cable(directo o cruzado))
 
-Dentro de la interfaz de configuración, podemos ejectuar dos comandos:
+Dentro de la interfaz de configuración, podemos ejecutar dos comandos:
 
 ````
 duplex {auto|full|half}
@@ -45,7 +45,7 @@ Se puede usar el comando **mdix auto** en los switches más modernos para detect
 8)show ipv6 interface [interface-id]
 9)show mac-address-table
 10)show mac address-table
-11)show port
+11)show interfaces status
 12)show arp
 ````
 
@@ -59,7 +59,7 @@ Se puede usar el comando **mdix auto** en los switches más modernos para detect
 
 5)Muestra el estado del hardware y el software del sistema.
 
-6)Muestra las últimas 1p líneas de comandos en el búfer. Se puede cambiar el tamaño con el comando **terminal history size {number}**
+6)Muestra las últimas 10 líneas de comandos en el búfer. Se puede cambiar el tamaño con el comando **terminal history size {number}**
 
 7-8)Muestra información de IP de una interfaz.
 
@@ -148,7 +148,7 @@ Comprobación:
 
 🚨 IMPORTANTE: algunos de los conceptos que se mencionan aquí aparecen en la guía [VLAN](/ccna/vlan/)
 
-1º) Deshabilitar las negociaciones DTP (enlace automático) en los puertos que no son enlaces mediante el comando **switchport mode accesse** la interfaz del switch.
+1º) Deshabilitar las negociaciones DTP (enlace automático) en los puertos que no son enlaces mediante el comando **switchport mode access** la interfaz del switch.
 
 2º) Deshabilitar los puertos no utilizados y colocarlos en una VLAN no utilizada.
 
@@ -161,13 +161,13 @@ Comprobación:
 
 ###  Mitigación ataques DHCP
 
-1º) Habilitar DHCP snooping usando el comando **ip dhcp snooping en modo global de configuración.
+1º) Habilitar DHCP snooping usando el comando **ip dhcp snooping** en modo global de configuración.
 
-2º) En los puertos de confianza (puertos donde estea el servidor DHCP o otro dispositivo de red), usar el comando **ip dhcp snooping trust**.
+2º) En los puertos de confianza (puertos donde esté el servidor DHCP o otro dispositivo de red), usar el comando **ip dhcp snooping trust**.
 
 3º) En las interfaces que no son de confianza, limitar la cantidad de mensajes de descubrimiento de DHCP que se pueden recibir con el comando **ip dhcp snooping limit rate {n-packets-per-second}**.
 
-4º) Habilitar la inspección DHCP por VLAN, o por un rango de VLAN, utilizando el comando **ip dhcp snooping {vlan-id}**.
+4º) Habilitar la inspección DHCP por VLAN, o por un rango de VLAN, utilizando el comando **ip dhcp snooping vñan {vlan-id}**.
 
 Ejemplo:
 
@@ -194,7 +194,7 @@ Implementación de la DAI (Dynamic ARP Inspection):
 DAI se puede configurar para revisar si hay direcciones MAC e IP de destino o de origen. Para eso usamos el comando:
 
 ````
-ip arp inspección validate {[src-mac] [dst-mac] [ip]}
+ip arp inspection validate {[src-mac] [dst-mac] [ip]}
 ````
 
 💡OJO: al ingresar múltiples comandos de validación de inspección de arp sobre escribe el comando anterior.
@@ -239,4 +239,4 @@ BPDU Guard se puede habilitar:
 ◇ Globalmente: comando de configuración **spanning-tree portfast bpduguard default**, para habilitar BPDU Guard en todos los puertos de acceso.
 
 
-🚨 IMPORTANTE: Si se recibe una BPDU en un puerto de acceso habilitado para BPDU Guard, el puerto se pone en estado de error deshabilitado. Esto significa que el puerto se cierra y debe volver a habilitarse manualmente o recuperarse automáticamente a través del comando errdisable recovery cause psecure_violation
+🚨 IMPORTANTE: Si se recibe una BPDU en un puerto de acceso habilitado para BPDU Guard, el puerto se pone en estado de error deshabilitado. Esto significa que el puerto se cierra y debe volver a habilitarse manualmente o recuperarse automáticamente a través del comando **errdisable recovery cause psecure_violation**

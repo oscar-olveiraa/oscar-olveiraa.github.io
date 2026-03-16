@@ -7,6 +7,8 @@ title: Configuración de un router
 
 ## Configurar interfaces en router
 
+🚨 IMPORTANTE: Las interfaces de los routers están desactivadas por defecto y deben habilitarse con **no shutdown**
+
 Para configurar una interfaz en un router se va a ejecutar los siguientes comandos dentro dentro del modo de configuración de interfaces:
 
 ````

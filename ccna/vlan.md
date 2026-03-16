@@ -20,7 +20,7 @@ Una vez creado la VLAN, se asigna a una interfaz:
 
 ![](/ccna/vlan/captura2.png)
 
-Añadir una vlan que sea para el tráfico de voz hará que use QoS, para hacerlo simplemente se crea una VLAN (en el e.j es 150) y se la asigna a una interfaz con los siguientes comandos dentro del modo de configuración de interfaz:
+Añadir una vlan que sea para el tráfico de voz hará que use QoS, para hacerlo simplemente se crea una VLAN (en el ejemplo es 150) y se la asigna a una interfaz con los siguientes comandos dentro del modo de configuración de interfaz:
 
 ````
 mls qos trust cos
@@ -77,7 +77,7 @@ Para activarlo hay varios modos:
 2)show vlan {vlan-id}
 3)show vlan {vlan-name}
 4)show interfaces [interface-id] switchport
-5)show interface trunk
+5)show interfaces trunk
 6)show dtp interface [interface-id]
 ````
 
@@ -89,4 +89,4 @@ Para activarlo hay varios modos:
 
 5)Muestra la configuración del enlace troncal, por ejemplo la VLAN nativa, o las VLAN permitidas.
 
-6)Para determinar el modo DTP actual. Se recomienda que las interfaces estean o modo "access" o modo "trunk" y desactivar DTP.
+6)Para determinar el modo DTP actual. Se recomienda que las interfaces estén en modo "access" o modo "trunk" y desactivar DTP.
